@@ -1,0 +1,49 @@
+<div class="main-content">
+  
+  <div class="add-products page">
+    <h3>Our Products</h3>
+    <div class="filters">
+      <form>
+        Checkboxes here
+      </form>
+    </div>
+
+    <ul class="products-list">
+      <script id="products-template" type="x-handlebars-template">
+        {{#each this}}
+          <li data-index="{{id}}">
+            <a href="#" class="product-photo"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
+            <h2><a href="#">{{name}}</a></h2>
+            <ul class="product-description">
+              <li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
+              <li><span>OS: </span>{{specs.os}}</li>
+              <li><span>Camera: </span>{{specs.camera}} mpx</li>
+              <li><span>Storage: </span>{{specs.storage}} gb</li>
+            </ul>
+            <button>Buy Now!</button>
+            <p class="product-price">
+              {{price}}$
+            </p>
+            <div class="highlight"></div>
+          </li>
+          {{/each}}
+      </script>
+    </ul>
+  </div>
+
+  <div class="single-product page">
+    <div class="overlay"></div>
+    <div class="preview-large">
+      <h3>Single Product View</h3>
+      <img src=""/>
+      <p></p>
+
+      <span class="close">&times;</span>
+    </div>
+  </div>
+
+  <div class="error page">
+    <h3>Sorry, something went wrong!</h3>
+  </div>
+
+</div>
