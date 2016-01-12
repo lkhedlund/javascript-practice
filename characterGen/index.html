@@ -1,0 +1,55 @@
+<!Doctype HTML>
+<html>
+<head>
+  <title>D&amp;D Character Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='generator.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="container">
+  <h1>
+    Quick Character Generator
+  </h1>
+  <div class="generator">
+    <p>
+      <label for="name">Type your name and press ENTER</label>
+      <input id="name" type="text">
+    </p>
+    <p>
+      <label for="primary_stat">Primary Stat</label>
+      <select id="primary_stat">
+        <option value="str">Strength</option>
+        <option value="dex">Dexterity</option>
+        <option value="con">Constitution</option>
+        <option value="int">Intelligence</option>
+        <option value="wis">Wisdom</option>
+        <option value="cha">Charisma</option>
+      </select>
+    </p>
+  </div>
+  <div class="details">
+    <h1>
+      <span id="player_name"></span> the <span id="class_name"></span>
+    </h1>
+    <h4 id="proficiency">Proficiencies: </h4>
+    <table id="stats">
+      <tbody>
+      </tbody>
+      <tr>
+        <td id="str">STR</td>
+        <td id="dex">DEX</td>
+        <td id="con">CON</td>
+      </tr>
+      <tr>
+        <td id="int">INT</td>
+        <td id="wis">WIS</td>
+        <td id="cha">CHA</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="generator.js"></script>
+</body>
+</html>

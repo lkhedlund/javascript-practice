@@ -1,0 +1,14 @@
+body {
+  font-family: 'Poiret One', cursive;
+}
+
+.container {
+  margin: auto;
+  max-width: 300px;
+}
+
+.details {
+  padding: 20px;
+  border: 1px solid #737373;
+  margin-top: 20px;
+}
