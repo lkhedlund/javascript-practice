@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>D3 Charts and Graphs</title>
+    <link href='main.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="chart"></div>
+    <!-- Start JS -->
+    <script src="../d3.js"  charset="utf-8"></script>
+    <script>
+      (function() {
+        var data = [4, 8, 15, 16, 23, 42];
+        var chart = d3.select('.chart');
+        var bar = chart.selectAll('div');
+        var barUpdate = bar.data(data);
+        var barEnter =  barUpdate.enter().append('div');
+
+        // Linear scale for a more explicit chart display
+        var x = d3.scale.linear()
+          .domain([0, d3.max(data)])
+          .range([0, 420]);
+
+        barEnter.style('width', function(d) { return x(d) + 'px'; });
+        barEnter.text(function(d) { return d; });
+      })();
+    </script>
+  </body>
+</html>
