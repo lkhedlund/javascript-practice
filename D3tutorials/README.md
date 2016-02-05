@@ -2,7 +2,7 @@
 
 Below is a list of tutorials that I plan to complete at some point:
 
-* [~~Let’s Make a Bar Chart, Parts I~~](http://bost.ocks.org/mike/bar/), [~~II~~](http://bost.ocks.org/mike/bar/2/) & [III](http://bost.ocks.org/mike/bar/3/)
+* [~~Let’s Make a Bar Chart, Parts I~~](http://bost.ocks.org/mike/bar/), [~~II~~](http://bost.ocks.org/mike/bar/2/) & [~~III~~](http://bost.ocks.org/mike/bar/3/)
 * [Three Little Circles](http://bost.ocks.org/mike/circles/)
 * [Thinking with Joins](http://bost.ocks.org/mike/join/)
 * [How Selections Work](http://bost.ocks.org/mike/selection/)

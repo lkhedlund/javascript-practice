@@ -4,7 +4,7 @@
   text-align: right;
   padding: 3px;
   margin: 1px;
-  color: white;
+  /*color: white;*/
 }
 
 .chart rect {
@@ -12,7 +12,26 @@
 }
 
 .chart text {
-  fill: white;
+  /*fill: white;*/
   font: 10px sans-serif;
   text-anchor: end;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
 }
