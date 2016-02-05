@@ -9,8 +9,9 @@
     <!-- Start JS -->
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
-    var width = 960,
-      height = 500;
+    var margin = {top: 20, right: 30, bottom: 30, left: 40}
+      width = 700 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
     var x = d3.scale.ordinal()
       .rangeRoundBands([0, width], .1);
@@ -20,8 +21,10 @@
       .range([height, 0]);
 
     var chart = d3.select('.chart')
-      .attr('width', width)
-      .attr('height', height);
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     d3.csv("data.csv", type, function(error, data) {
       x.domain(data.map(function(d) { return d.name; }));
