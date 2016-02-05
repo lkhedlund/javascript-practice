@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>D3 Tutorials</title>
+    <!-- <link href='main.css' rel='stylesheet' type='text/css'> -->
+  </head>
+  <body>
+    <svg width="720" height="120">
+      <circle cx="40" cy="60" r="10"></circle>
+      <circle cx="80" cy="60" r="10"></circle>
+      <circle cx="120" cy="60" r="10"></circle>
+    </svg>
+    <!-- Start JS -->
+    <script src="../d3.js"  charset="utf-8"></script>
+    <script>
+      // Selecting elements
+      function selectElem() {
+        var circle = d3.selectAll('circle');
+
+        circle.style('fill', 'steelblue');
+        circle.attr('r', 30);
+      }
+
+      selectElem();
+    </script>
+  </body>
+</html>
