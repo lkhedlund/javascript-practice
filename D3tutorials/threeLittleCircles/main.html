@@ -14,6 +14,7 @@
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
       var dataArray = [32, 57, 112, 293];
+      var svg = d3.select('svg');
 
       // Selecting elements
       function selectElems() {
@@ -35,7 +36,8 @@
       }
 
       function enterElems() {
-        var svg = d3.select('svg');
+
+        selectElems();
 
         var circle = svg.selectAll('circle')
           .data(dataArray);
@@ -49,14 +51,11 @@
         circleEnter.attr('r', function(d) { return Math.sqrt(d); });
       }
 
-      // selectElems();
       // enterElems();
 
       function selectAndEnter() {
 
         selectElems();
-
-        var svg = d3.select('svg');
 
         svg.selectAll('circle')
             .data(dataArray)
@@ -69,6 +68,15 @@
       }
 
       selectAndEnter();
+
+      function removeElems() {
+        var circle = svg.selectAll('circle')
+          .data([32, 57]);
+
+        circle.exit().remove();
+      }
+
+      removeElems();
     </script>
   </body>
 </html>
