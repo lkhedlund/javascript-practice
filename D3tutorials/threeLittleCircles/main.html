@@ -6,9 +6,9 @@
   </head>
   <body>
     <svg width="720" height="120">
-      <circle cx="40" cy="60" r="10"></circle>
-      <circle cx="80" cy="60" r="10"></circle>
-      <circle cx="120" cy="60" r="10"></circle>
+      <circle class="circ-animate" cx="40" cy="60" r="10"></circle>
+      <circle class="circ-animate" cx="80" cy="60" r="10"></circle>
+      <circle class="circ-animate" cx="120" cy="60" r="10"></circle>
     </svg>
     <!-- Start JS -->
     <script src="../d3.js"  charset="utf-8"></script>
@@ -67,7 +67,7 @@
             .attr('r', function(d) { return Math.sqrt(d); });
       }
 
-      selectAndEnter();
+      // selectAndEnter();
 
       function removeElems() {
         var circle = svg.selectAll('circle')
@@ -76,7 +76,30 @@
         circle.exit().remove();
       }
 
-      removeElems();
+      // removeElems();
+
+      function enterUpdateExitElems() {
+        /*
+        enter - incoming elements, entering the stage.
+        update - persistent elements, staying on stage.
+        exit - outgoing elements, exiting the stage.
+        */
+
+        var circle = svg.selectAll('circle')
+          .data(dataArray, function(d) { return d; });
+
+        circle.enter().append('circle')
+          .attr('class', 'circ-animate')
+          .attr('cy', 60)
+          .attr('cx', function(d, i) { return i * 100 + 30; })
+          .attr('r', function(d) { return Math.sqrt(d); });
+
+        circle.style('fill', 'steelblue');
+
+        circle.exit().remove();
+      }
+
+      enterUpdateExitElems();
     </script>
   </body>
 </html>

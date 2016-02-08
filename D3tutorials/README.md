@@ -3,7 +3,7 @@
 Below is the list of tutorials from D3. Completed tutorials are struck through, ~~like so~~:
 
 * [~~Let’s Make a Bar Chart, Parts I~~](http://bost.ocks.org/mike/bar/), [~~II~~](http://bost.ocks.org/mike/bar/2/) & [~~III~~](http://bost.ocks.org/mike/bar/3/)
-* [Three Little Circles](http://bost.ocks.org/mike/circles/)
+* [~~Three Little Circles~~](http://bost.ocks.org/mike/circles/)
 * [Thinking with Joins](http://bost.ocks.org/mike/join/)
 * [How Selections Work](http://bost.ocks.org/mike/selection/)
 * [How Selections Work(Korean)](http://hanmomhanda.github.io/Docs/d3/How-Selections-Work.html)
