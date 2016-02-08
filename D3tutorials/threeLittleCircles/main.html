@@ -13,8 +13,10 @@
     <!-- Start JS -->
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
+      var dataArray = [32, 57, 112, 293];
+
       // Selecting elements
-      function selectElem() {
+      function selectElems() {
         var circle = d3.selectAll('circle');
         circle.classed('circ-animate', true);
 
@@ -26,14 +28,29 @@
         circle.attr('cx', function() { return Math.random() * 720; });
 
         // We can also bind data to each circle and set the radius (like so)
-        var dataArray = [32, 57, 112];
         circle.data(dataArray);
         circle.attr('r', function(d) { return Math.sqrt(d); });
         // By adding the second argument (i)ndex, we can position sequentially
         circle.attr('cx', function(d, i) { return i * 100 + 30; });
       }
 
-      selectElem();
+      function enterElems() {
+        var svg = d3.select('svg');
+
+        var circle = svg.selectAll('circle')
+          .data(dataArray);
+
+        var circleEnter = circle.enter().append('circle');
+
+        circleEnter.style('fill', 'darkslategray');
+        circleEnter.classed('circ-animate', true);
+        circleEnter.attr('cy', 60);
+        circleEnter.attr('cx', function(d, i) { return i * 100 + 30; });
+        circleEnter.attr('r', function(d) { return Math.sqrt(d); });
+      }
+
+      selectElems();
+      enterElems();
     </script>
   </body>
 </html>
