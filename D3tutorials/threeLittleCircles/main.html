@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>D3 Tutorials</title>
-    <!-- <link href='main.css' rel='stylesheet' type='text/css'> -->
+    <link href='main.css' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <svg width="720" height="120">
@@ -16,9 +16,21 @@
       // Selecting elements
       function selectElem() {
         var circle = d3.selectAll('circle');
+        circle.classed('circ-animate', true);
 
+        // Can change the colour with full and size by selecting the radius attribute
         circle.style('fill', 'steelblue');
         circle.attr('r', 30);
+
+        // Can use an anonymous function to calculate attribute values on the fly
+        circle.attr('cx', function() { return Math.random() * 720; });
+
+        // We can also bind data to each circle and set the radius (like so)
+        var dataArray = [32, 57, 112];
+        circle.data(dataArray);
+        circle.attr('r', function(d) { return Math.sqrt(d); });
+        // By adding the second argument (i)ndex, we can position sequentially
+        circle.attr('cx', function(d, i) { return i * 100 + 30; });
       }
 
       selectElem();
