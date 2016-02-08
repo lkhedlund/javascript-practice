@@ -49,8 +49,26 @@
         circleEnter.attr('r', function(d) { return Math.sqrt(d); });
       }
 
-      selectElems();
-      enterElems();
+      // selectElems();
+      // enterElems();
+
+      function selectAndEnter() {
+
+        selectElems();
+
+        var svg = d3.select('svg');
+
+        svg.selectAll('circle')
+            .data(dataArray)
+          .enter().append('circle')
+            .style('fill', 'darkslategray')
+            .classed('circ-animate', true)
+            .attr('cy', 60)
+            .attr('cx', function(d, i) { return i * 100 + 30; })
+            .attr('r', function(d) { return Math.sqrt(d); });
+      }
+
+      selectAndEnter();
     </script>
   </body>
 </html>
