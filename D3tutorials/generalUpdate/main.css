@@ -11,3 +11,8 @@ text {
   fill: #333;
   transition: all 1s ease;
 }
+
+.exit {
+  fill: brown;
+  transition: all 1s ease;
+}
