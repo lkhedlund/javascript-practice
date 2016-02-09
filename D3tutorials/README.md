@@ -8,7 +8,7 @@ Below is the list of tutorials from the D3 github. Completed tutorials are struc
 * [~~Thinking with Joins~~](http://bost.ocks.org/mike/join/)
 * [~~How Selections Work~~](http://bost.ocks.org/mike/selection/)
 * [~~General Update Pattern, Parts I~~](http://bl.ocks.org/mbostock/3808218), [~~II~~](http://bl.ocks.org/mbostock/3808221) & [~~III~~](http://bl.ocks.org/mbostock/3808234)
-* [Nested Selections](http://bost.ocks.org/mike/nest/)
+* [~~Nested Selections~~](http://bost.ocks.org/mike/nest/)
 * [Object Constancy](http://bost.ocks.org/mike/constancy/)
 * [Working with Transitions](http://bost.ocks.org/mike/transition/)
 * [D3 Tutorials](http://alignedleft.com/tutorials/d3/) - Scott Murray
