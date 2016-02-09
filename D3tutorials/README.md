@@ -1,12 +1,12 @@
-# Tutorials
+#D3 Practice
 
-Below is the list of tutorials from D3. Completed tutorials are struck through, ~~like so~~:
+Below is the list of tutorials from the D3 github. Completed tutorials are struck through, ~~like so~~. If the tutorial has practice problems attached, I've created a folder with its name.
 
+##Tutorials
 * [~~Let’s Make a Bar Chart, Parts I~~](http://bost.ocks.org/mike/bar/), [~~II~~](http://bost.ocks.org/mike/bar/2/) & [~~III~~](http://bost.ocks.org/mike/bar/3/)
 * [~~Three Little Circles~~](http://bost.ocks.org/mike/circles/)
 * [~~Thinking with Joins~~](http://bost.ocks.org/mike/join/)
-* [How Selections Work](http://bost.ocks.org/mike/selection/)
-* [How Selections Work(Korean)](http://hanmomhanda.github.io/Docs/d3/How-Selections-Work.html)
+* [~~How Selections Work~~](http://bost.ocks.org/mike/selection/)
 * [General Update Pattern, Parts I](http://bl.ocks.org/mbostock/3808218), [II](http://bl.ocks.org/mbostock/3808221) & [III](http://bl.ocks.org/mbostock/3808234)
 * [Nested Selections](http://bost.ocks.org/mike/nest/)
 * [Object Constancy](http://bost.ocks.org/mike/constancy/)
