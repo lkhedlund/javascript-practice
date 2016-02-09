@@ -1,0 +1,13 @@
+text {
+  font: bold 48px monospace;
+}
+
+.enter {
+  fill: green;
+  transition: all 1s ease;
+}
+
+.update {
+  fill: #333;
+  transition: all 1s ease;
+}
