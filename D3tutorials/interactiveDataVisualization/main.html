@@ -17,14 +17,21 @@
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
       var dataset = [5, 10, 15, 20, 25];
-      var barHeight = 5;
 
       d3.select('body').selectAll('div')
           .data(dataset)
         .enter()
           .append('div')
           .attr('class', 'bar')
-          .style('height', function(d) { return barHeight * d + "px"; });
+          .style('height', function(d) { return setBarHeight(d); });
+
+      function setBarHeight(d) {
+        var barHeight = 5;
+        return barHeight * d + "px";
+      }
+
+
+          // From older tutorials
           // NOTE: Cannot use formatData(d) in place of function(d). It returns a ReferenceError: d is undefined.
           // .text(function(d) { return formatData(d) })
           // .style('color', function(d) { return colorData(d) });
