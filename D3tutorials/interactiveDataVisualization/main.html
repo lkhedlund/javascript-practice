@@ -2,28 +2,36 @@
 <html>
   <head>
     <title>D3 Tutorials</title>
+    <style>
+      div.bar {
+        display: inline-block;
+        width: 20px;
+        height: 75px;
+        background-color: teal;
+        margin-right: 2px;
+      }
+    </style>
   </head>
   <body>
     <!-- Start JS -->
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
       var dataset = [5, 10, 15, 20, 25];
+      var barHeight = 5;
 
-      d3.select('body').selectAll('p')
+      d3.select('body').selectAll('div')
           .data(dataset)
         .enter()
-          .append('p')
-          // .text(function(d) { return d; });
-          // NOTE: Cannot use formatData(d) in place of function(d). It returns
-          // a ReferenceError: d is undefined.
-          .text(function(d) { return formatData(d) })
-          .style('color', function(d) { return colorData(d) });
+          .append('div')
+          .attr('class', 'bar')
+          .style('height', function(d) { return barHeight * d + "px"; });
+          // NOTE: Cannot use formatData(d) in place of function(d). It returns a ReferenceError: d is undefined.
+          // .text(function(d) { return formatData(d) })
+          // .style('color', function(d) { return colorData(d) });
 
-      // These functions are not part of the tutorial.
-      // Testing using function in place of long statement.
+      // NOTE: These functions are not part of the tutorial.
       function formatData(d) {
-        output = "Number: " + d;
-        return output;
+        return "Number: " + d;
       }
 
       function colorData(d) {
