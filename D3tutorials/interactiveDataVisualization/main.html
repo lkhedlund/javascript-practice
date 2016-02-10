@@ -7,7 +7,6 @@
         display: inline-block;
         width: 20px;
         height: 75px;
-        background-color: teal;
         margin-right: 2px;
       }
     </style>
@@ -16,13 +15,16 @@
     <!-- Start JS -->
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
-      var dataset = [5, 10, 15, 20, 25];
+      var dataset = createDataset();
+      displayData();
 
       d3.select('body').selectAll('div')
           .data(dataset)
         .enter()
           .append('div')
           .attr('class', 'bar')
+          .transition()
+          .style('background-color', function(d) { return getRandomColour(); })
           .style('height', function(d) { return setBarHeight(d); });
 
       function setBarHeight(d) {
@@ -30,6 +32,18 @@
         return barHeight * d + "px";
       }
 
+      function createDataset() {
+        var dataset = [];
+        for (var i = 0; i < 25; i++) {
+          dataset.push(Math.round(Math.random() * 30));
+        }
+        return dataset;
+      }
+
+      function getRandomColour() {
+        var colours = ["red", "teal", "steelblue", "slategray", "pink", "skyblue", "green"];
+        return colours[Math.round(Math.random() * colours.length)];
+      }
 
           // From older tutorials
           // NOTE: Cannot use formatData(d) in place of function(d). It returns a ReferenceError: d is undefined.
