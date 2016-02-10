@@ -3,6 +3,7 @@
 Below is the list of tutorials from the D3 github. Completed tutorials are struck through, ~~like so~~. If the tutorial has practice problems attached, I've created a folder with its name.
 
 ##Tutorials
+###Official
 * [~~Let’s Make a Bar Chart, Parts I~~](http://bost.ocks.org/mike/bar/), [~~II~~](http://bost.ocks.org/mike/bar/2/) & [~~III~~](http://bost.ocks.org/mike/bar/3/)
 * [~~Three Little Circles~~](http://bost.ocks.org/mike/circles/)
 * [~~Thinking with Joins~~](http://bost.ocks.org/mike/join/)
@@ -11,7 +12,9 @@ Below is the list of tutorials from the D3 github. Completed tutorials are struc
 * [~~Nested Selections~~](http://bost.ocks.org/mike/nest/)
 * [~~Object Constancy~~](http://bost.ocks.org/mike/constancy/)
 * [~~Working with Transitions~~](http://bost.ocks.org/mike/transition/)
-* [D3 Tutorials](http://alignedleft.com/tutorials/d3/) - Scott Murray
+
+###Third Party
+* ['Interactive Data Visualization' Tutorials](http://alignedleft.com/tutorials/d3/) - Scott Murray
 * [Create A Bar Chart With D3 JavaScript](http://vegibit.com/create-a-bar-chart-with-d3-javascript/) - Vegibit
 * [Try D3 Now](http://christopheviau.com/d3_tutorial/) - Christophe Viau
 * [Getting Started with D3 Graphs](http://thinkingonthinking.com/Getting-Started-With-D3/) - Patrick Mulder
