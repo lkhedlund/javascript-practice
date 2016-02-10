@@ -9,7 +9,7 @@ Below is the list of tutorials from the D3 github. Completed tutorials are struc
 * [~~How Selections Work~~](http://bost.ocks.org/mike/selection/)
 * [~~General Update Pattern, Parts I~~](http://bl.ocks.org/mbostock/3808218), [~~II~~](http://bl.ocks.org/mbostock/3808221) & [~~III~~](http://bl.ocks.org/mbostock/3808234)
 * [~~Nested Selections~~](http://bost.ocks.org/mike/nest/)
-* [Object Constancy](http://bost.ocks.org/mike/constancy/)
+* [~~Object Constancy~~](http://bost.ocks.org/mike/constancy/)
 * [Working with Transitions](http://bost.ocks.org/mike/transition/)
 * [D3 Tutorials](http://alignedleft.com/tutorials/d3/) - Scott Murray
 * [Create A Bar Chart With D3 JavaScript](http://vegibit.com/create-a-bar-chart-with-d3-javascript/) - Vegibit
