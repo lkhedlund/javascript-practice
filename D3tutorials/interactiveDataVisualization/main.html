@@ -7,8 +7,28 @@
     <!-- Start JS -->
     <script src="../d3.js"  charset="utf-8"></script>
     <script>
-      // Adding Elements
-      d3.select("body").append('p').text('New paragraph!');
+      var dataset = [5, 10, 15, 20, 25];
+
+      d3.select('body').selectAll('p')
+          .data(dataset)
+        .enter()
+          .append('p')
+          // .text(function(d) { return d; });
+          // NOTE: Cannot use formatData(d) in place of function(d). It returns
+          // a ReferenceError: d is undefined.
+          .text(function(d) { return formatData(d) })
+          .style('color', function(d) { return colorData(d) });
+
+      // These functions are not part of the tutorial.
+      // Testing using function in place of long statement.
+      function formatData(d) {
+        output = "Number: " + d;
+        return output;
+      }
+
+      function colorData(d) {
+        return d >= 15 ? "red" : "black";
+      }
     </script>
   </body>
 </html>
