@@ -1,6 +1,6 @@
-const countLetters = (function(sentence) {
+const getCharacter = (function(sentence) {
 
-  function countIn(sentence) {
+  function count(sentence) {
     let totalCount = {};
     sentence = sentence.replace(/\s/g, '');
 
@@ -16,9 +16,27 @@ const countLetters = (function(sentence) {
     return totalCount;
   }
 
+  function indicies(sentence) {
+    let indexPositions = {};
+    sentence = sentence.replace(/\s/g, '');
+
+    for (index in sentence) {
+      let letter = sentence[index];
+      if (indexPositions[letter] !== undefined) {
+        indexPositions[letter].push(index);
+      } else {
+        indexPositions[letter] = [index];
+      }
+    }
+
+    return indexPositions;
+  }
+
   return {
-    countIn: countIn,
+    count: count,
+    indicies: indicies,
   }
 })();
 
-console.log( countLetters.countIn(process.argv[2]) );
+console.log( getCharacter.count(process.argv[2]) );
+console.log( getCharacter.indicies(process.argv[2]) );
