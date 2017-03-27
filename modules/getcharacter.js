@@ -1,42 +1,36 @@
-const getCharacter = (function(sentence) {
+function count(sentence) {
+  let totalCount = {};
+  sentence = sentence.replace(/\s/g, '');
 
-  function count(sentence) {
-    let totalCount = {};
-    sentence = sentence.replace(/\s/g, '');
-
-    for (index in sentence) {
-      let letter = sentence[index];
-      if (totalCount[letter] !== undefined) {
-        totalCount[letter] += 1;
-      } else {
-        totalCount[letter] = 1;
-      }
+  for (index in sentence) {
+    let letter = sentence[index];
+    if (totalCount[letter] !== undefined) {
+      totalCount[letter] += 1;
+    } else {
+      totalCount[letter] = 1;
     }
-
-    return totalCount;
   }
 
-  function indicies(sentence) {
-    let indexPositions = {};
-    sentence = sentence.replace(/\s/g, '');
+  return totalCount;
+}
 
-    for (index in sentence) {
-      let letter = sentence[index];
-      if (indexPositions[letter] !== undefined) {
-        indexPositions[letter].push(index);
-      } else {
-        indexPositions[letter] = [index];
-      }
+function indicies(sentence) {
+  let indexPositions = {};
+  sentence = sentence.replace(/\s/g, '');
+
+  for (index in sentence) {
+    let letter = sentence[index];
+    if (indexPositions[letter] !== undefined) {
+      indexPositions[letter].push(index);
+    } else {
+      indexPositions[letter] = [index];
     }
-
-    return indexPositions;
   }
 
-  return {
-    count: count,
-    indicies: indicies,
-  }
-})();
+  return indexPositions;
+}
 
-console.log( getCharacter.count(process.argv[2]) );
-console.log( getCharacter.indicies(process.argv[2]) );
+module.exports = {
+  count: count,
+  indicies: indicies,
+};
