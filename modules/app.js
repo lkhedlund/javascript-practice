@@ -1,4 +1,10 @@
-let getCharacter = require("./getcharacter.js");
+const getCharacter = require("./getcharacter.js");
+const chalk = require("chalk");
 
-console.log( getCharacter.count(process.argv[2]) );
-console.log( getCharacter.indicies(process.argv[2]) );
+console.log(chalk.bgBlue.bold('Practice Modules'));
+
+console.log(chalk.yellow('Get Character Module'));
+let sentenceCount = getCharacter.count(process.argv[2]);
+let sentenceIndicies = getCharacter.indicies(process.argv[2]);
+console.log(sentenceCount);
+console.log(sentenceIndicies);
