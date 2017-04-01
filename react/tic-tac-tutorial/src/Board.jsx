@@ -3,7 +3,7 @@ import Square from './Square.jsx';
 
 class Board extends Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
   render() {
     const status = 'Next player: X';
