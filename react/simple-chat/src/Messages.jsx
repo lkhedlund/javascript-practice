@@ -5,7 +5,10 @@ class Messages extends Component {
   render() {
     return (
       <main className="messages">
-        <Messagelist />
+        <MessageList />
+        <div className="message system">
+          Anonymous1 change their name to nom nom.
+        </div>
       </main>
     );
   }
