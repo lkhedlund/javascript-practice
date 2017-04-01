@@ -6,7 +6,7 @@ require("../styles/main.scss");
 // Render the top-level React component
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Game.jsx';
+import Game from './Game.jsx';
 
 ReactDOM.render(<Game />, document.getElementById('react-root'));
 

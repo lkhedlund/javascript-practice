@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Square from './Square.jsx';
 
-class Board extends React.Component {
+class Board extends Component {
   renderSquare(i) {
     return <Square />;
   }
