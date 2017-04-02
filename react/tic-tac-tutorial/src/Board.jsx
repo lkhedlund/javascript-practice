@@ -14,7 +14,7 @@ class Board extends Component {
     this.setState({squares: squares});
   }
   renderSquare(i) {
-    return <Square value={this.state.squares[1]} onClick={() => this.handleClick(i)} />;
+    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
   }
   render() {
     const status = 'Next player: X';
