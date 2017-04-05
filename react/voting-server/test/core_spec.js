@@ -1,6 +1,6 @@
 import {List, Map} from 'immutable';
 import {expect} from 'chai';
-import {setEntries, next} from '../src/core';
+import {setEntries, next, vote} from '../src/core';
 
 describe('application logic', () => {
 
@@ -38,6 +38,52 @@ describe('application logic', () => {
           pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel')
         }),
         entries: List.of('The Royal Tenenbaums')
+      }));
+    });
+  });
+
+  describe('vote', () => {
+
+    it('creates a tally for the voted entry', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel')
+        }),
+        entries: List(),
+      });
+      const nextState = vote(state, 'Moonrise Kingdom');
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+          tally: Map({
+            'Moonrise Kingdom': 1
+          })
+        }),
+        entries: List()
+      }));
+    });
+
+    it('adds to existing tally for the voted entry', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+          tally: Map({
+            'Moonrise Kingdom': 3,
+            'The Grand Budapest Hotel': 2
+          })
+        }),
+        entries: List()
+      });
+      const nextState = vote(state, 'Moonrise Kingdom');
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+          tally: Map({
+            'Moonrise Kingdom': 4,
+            'The Grand Budapest Hotel': 2
+          })
+        }),
+        entries: List()
       }));
     });
   });
