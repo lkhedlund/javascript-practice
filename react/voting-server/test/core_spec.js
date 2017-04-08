@@ -40,6 +40,47 @@ describe('application logic', () => {
         entries: List.of('The Royal Tenenbaums')
       }));
     });
+
+    it('puts winner of current vote back to entries', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+          tally: Map({
+            'Moonrise Kingdom': 4,
+            'The Grand Budapest Hotel': 2
+          })
+        }),
+        entries: List.of('The Royal Tenenbaums', 'Fantastic Mr. Fox', 'Rushmore')
+      });
+      const nextState = next(state);
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('The Royal Tenenbaums', 'Fantastic Mr. Fox')
+        }),
+        entries: List.of('Rushmore', 'Moonrise Kingdom')
+      }));
+    });
+
+    it('puts both from tied vote back to entries', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+          tally: Map({
+            'Moonrise Kingdom': 3,
+            'The Grand Budapest Hotel': 3
+          })
+        }),
+        entries: List.of('The Royal Tenenbaums', 'Fantastic Mr. Fox', 'Rushmore')
+      });
+      const nextState = next(state);
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('The Royal Tenenbaums', 'Fantastic Mr. Fox')
+        }),
+        entries: List.of('Rushmore', 'Moonrise Kingdom', 'The Grand Budapest Hotel')
+      }))
+    })
+
   });
 
   describe('vote', () => {
