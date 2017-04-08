@@ -78,57 +78,10 @@ describe('application logic', () => {
           pair: List.of('The Royal Tenenbaums', 'Fantastic Mr. Fox')
         }),
         entries: List.of('Rushmore', 'Moonrise Kingdom', 'The Grand Budapest Hotel')
-      }))
-    })
-
-  });
-
-  describe('vote', () => {
-
-    it('creates a tally for the voted entry', () => {
-      const state = Map({
-        vote: Map({
-          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel')
-        }),
-        entries: List(),
-      });
-      const nextState = vote(state, 'Moonrise Kingdom');
-      expect(nextState).to.equal(Map({
-        vote: Map({
-          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
-          tally: Map({
-            'Moonrise Kingdom': 1
-          })
-        }),
-        entries: List()
       }));
     });
 
-    it('adds to existing tally for the voted entry', () => {
-      const state = Map({
-        vote: Map({
-          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
-          tally: Map({
-            'Moonrise Kingdom': 3,
-            'The Grand Budapest Hotel': 2
-          })
-        }),
-        entries: List()
-      });
-      const nextState = vote(state, 'Moonrise Kingdom');
-      expect(nextState).to.equal(Map({
-        vote: Map({
-          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
-          tally: Map({
-            'Moonrise Kingdom': 4,
-            'The Grand Budapest Hotel': 2
-          })
-        }),
-        entries: List()
-      }));
-    });
-
-    if('marks winner when just one entry left', () => {
+    it('marks winner when just one entry left', () => {
       const state = Map({
         vote: Map({
           pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
@@ -142,6 +95,41 @@ describe('application logic', () => {
       const nextState = next(state);
       expect(nextState).to.equal(Map({
         winner: 'Moonrise Kingdom'
+      }));
+    });
+
+  });
+
+  describe('vote', () => {
+
+    it('creates a tally for the voted entry', () => {
+      const state = Map({
+        pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel')
+      });
+      const nextState = vote(state, 'Moonrise Kingdom');
+      expect(nextState).to.equal(Map({
+        pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+        tally: Map({
+          'Moonrise Kingdom': 1
+        })
+      }));
+    });
+
+    it('adds to existing tally for the voted entry', () => {
+      const state = Map({
+        pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+        tally: Map({
+          'Moonrise Kingdom': 3,
+          'The Grand Budapest Hotel': 2
+        })
+      });
+      const nextState = vote(state, 'Moonrise Kingdom');
+      expect(nextState).to.equal(Map({
+        pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+        tally: Map({
+          'Moonrise Kingdom': 4,
+          'The Grand Budapest Hotel': 2
+        })
       }));
     });
   });
