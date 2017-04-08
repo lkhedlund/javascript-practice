@@ -57,4 +57,20 @@ describe('reducer', () => {
     }));
   });
 
+  it('can be used with reduce', () => {
+    const actions = [
+      {type: 'SET_ENTRIES', entries: ['Moonrise Kingdom', 'The Grand Budapest Hotel']},
+      {type: 'NEXT'},
+      {type: 'VOTE', entry: 'Moonrise Kingdom'},
+      {type: 'VOTE', entry: 'The Grand Budapest Hotel'},
+      {type: 'VOTE', entry: 'Moonrise Kingdom'},
+      {type: 'NEXT'}
+    ];
+    const finalState = actions.reduce(reducer, Map());
+
+    expect(finalState).to.equal(fromJS({
+      winner: 'Moonrise Kingdom'
+    }));
+  });
+
 });
