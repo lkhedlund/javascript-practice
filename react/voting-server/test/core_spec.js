@@ -127,5 +127,22 @@ describe('application logic', () => {
         entries: List()
       }));
     });
+
+    if('marks winner when just one entry left', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Moonrise Kingdom', 'The Grand Budapest Hotel'),
+          tally: Map({
+            'Moonrise Kingdom': 4,
+            'The Grand Budapest Hotel': 2
+          })
+        }),
+        entries: List()
+      });
+      const nextState = next(state);
+      expect(nextState).to.equal(Map({
+        winner: 'Moonrise Kingdom'
+      }));
+    });
   });
 });
